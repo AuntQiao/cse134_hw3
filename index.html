@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicole Liu Portfolio - Home</title>
+  <link rel="icon" href="favicon.ico">
+  <style>
+    me-card, project-card { display:block; border:1px solid #ccc }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Welcome to Nicole Liu’s Portfolio</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutMe.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="experiments.html">Experiments</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <noscript>
+    <p>This browser does not support JavaScript.</p>
+  </noscript>
+
+  <main>
+    <section id="me">
+      <h2>About me</h2>
+      <me-card>
+        <picture>
+          <img src="Stanford-52.png" alt="Placeholder" width="150">
+        </picture>
+        <p><strong>Nicole Liu</strong> – a student who <span style = "color: red;">loves </span>creative projects.</p>
+        <a href="aboutMe.html" class="button">View Details</a>
+      </me-card>
+    </section>
+
+    <section id="projects">
+      <h2>Highlighted Projects</h2>
+      <project-card>
+        <p><em>Click below to see all my work.</em></p>
+        <a href="projects.html" class="button">View Projects</a>
+      </project-card>
+    </section>
+
+    <section id="resume">
+      <h2>Resume</h2>
+      <p>See my full resume and FAQs about my experience.</p>
+      <a href="resume.html" class="button">View Resume</a>
+    </section>
+
+    <section id="hello">
+      <h2>Console Test Element</h2>
+      <p>Find it!!!!!!</p>
+      <hello-world></hello-world>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Nicole Liu</p>
+  </footer>
+
+  <script>
+    class HelloWorld extends HTMLElement {
+      constructor() {
+        super();
+        console.log("Hello world!");
+      }
+    }
+    customElements.define("hello-world", HelloWorld);
+
+    document.createElement("me-card");
+    document.createElement("project-card");
+  </script>
+</body>
+</html>
