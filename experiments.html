@@ -4,48 +4,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Experiments</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+
+<body class="page" >
   <header>
     <h1>Experiments Page</h1>
     <nav>
-      <a href="index.html">Home</a> |
-      <a href="projects.html">Projects</a> |
-      <a href="resume.html">Resume</a> |
-      <a href="persona.html">Persona</a>
+      
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutMe.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+      </ul>
     </nav>
   </header>
 
   <main>
 
     <section>
-        <h2>Template</h2>
-        <template id="templateSection">
-            <figure>
-                <img src="Stanford-52.png" alt="Placeholder" width="150">
-            <figcaption>Example image loaded from a template</figcaption>
-            </figure>
-        </template>
-    </section>
-
-    <section>
       <h2>Picture</h2>
       <picture>
-        <img src="Stanford-52.png" alt="Example image" width="300">
+        <source srcset="images/Stanford-52-small.png" media="(max-width: 600px)">
+        <source srcset="images/Stanford-52.png" media="(min-width: 601px)">
+        <img src="images/Stanford-52.png" alt="Example image" width="300">
       </picture>
     </section>
 
     <section>
       <h2>Audio(Game start sound)</h2>
       <audio controls>
-        <source src="gameover.mp3" type="audio/mpeg">
+        <source src="images/gameover.mp3" type="audio/mpeg">
       </audio>
     </section>
 
     <section>
       <h2>Video</h2>
       <video controls width="300">
-        <source src="view.mp4" type="video/mp4">
+        <source src="images/view.mp4" type="video/mp4">
       </video>
     </section>
 

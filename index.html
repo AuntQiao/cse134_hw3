@@ -5,17 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nicole Liu Portfolio - Home</title>
   <link rel="icon" href="favicon.ico">
-  <style>
-    me-card, project-card { display:block; border:1px solid #ccc }
-  </style>
+  <link rel="stylesheet" href="styles.css">
+  
 </head>
 
-<body>
+<body class="page">
   <header>
     <h1>Welcome to Nicole Liu’s Portfolio</h1>
     <nav>
+      
       <ul>
-        <li><a href="index.html">Home</a></li>
         <li><a href="aboutMe.html">About Me</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="resume.html">Resume</a></li>
@@ -33,7 +32,9 @@
       <h2>About me</h2>
       <me-card>
         <picture>
-          <img src="Stanford-52.png" alt="Placeholder" width="150">
+          <source srcset="images/Stanford-52-small.png" media="(max-width: 600px)">
+          <source srcset="images/Stanford-52.png" media="(min-width: 601px)">
+          <img src="images/Stanford-52.png" alt="Placeholder" width="150">
         </picture>
         <p><strong>Nicole Liu</strong> – a student who <span style = "color: red;">loves </span>creative projects.</p>
         <a href="aboutMe.html" class="button">View Details</a>

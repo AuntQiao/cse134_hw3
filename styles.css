@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+
+:root {
+  --homepage-bg: #f8f9fa;
+  --accent: #a295f6;
+  --highlight: darkred;
+  --scrollbar-color-thumb: rgb(233, 102, 200);
+}
+/* property: var(--variable-name, fallback-value); */
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden; /* incase of overflow */
+}
+
+.page {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-rows: auto 1fr auto;
+  min-height: 100dvh;
+  margin: 0;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1rem;
+}
+
+/* nav a {
+  text-decoration: none;
+  color: #dce9ef;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: var(--highlight, darkred);            
+  background-color: white;    
+  border: 1px solid rgb(76, 18, 18);    
+  border-radius: 8px;        
+  padding: 0.3rem 0.6rem;     
+  transition: all 0.3s ease;  
+} */
+/* Nested css here and meet the 2024 baseline requirements. */
+
+nav a {
+  text-decoration: none;
+  color: var(--accent, gray);
+  font-weight: bold;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 0.3rem 0.6rem;
+  transition: all 0.2s ease;
+}
+nav a:hover {
+  color: var(--highlight, darkred);
+  background-color: white;
+  border: 1px solid black;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+}
+
+/* Baseline 2024 nesting feature (only works in latest browsers) */
+@supports (selector(&)) {
+  nav {
+    a {
+      text-decoration: none;
+      color: var(--accent, gray);
+      font-weight: bold;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      padding: 0.3rem 0.6rem;
+      transition: all 0.2s ease;
+
+      &:hover {
+        color: var(--highlight, darkred);
+        background-color: white;
+        border: 1px solid black;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+        transform: translateY(-2px);
+      }
+    }
+  }
+}
+
+
+
+/* Extra decoration */
+body {
+  font-family: 'Lora', sans-serif;
+  font-size: 18px;
+  margin: 0;
+  background: var(--homepage-bg, #f8f9fa);  
+  color: var(--accent, #9a97ac); 
+  scrollbar-width: thin; 
+  scrollbar-color: var(--scrollbar-color-thumb, darkred) #f8f9fa;
+  scrollbar-gutter: stable;
+}
+
+h1, h2 {
+  font-family: 'Lora', serif;
+  font-weight: 700; /* Bold 700 weight */ 
+}
+
+header{
+  background-image: url("images/oceans1.jpg"); 
+  background-size: cover;    
+  background-position: center; 
+  background-repeat: no-repeat; 
+  text-align: center;
+  color: rgb(238, 239, 244);
+  padding: 2rem;
+}
+
+/* sRGB is standard RGB */
+footer {
+  background-color: color-mix(in srgb,  rgb(178, 183, 247)70%, white);
+  text-align: center;
+  padding: 1rem;
+}
+
+section:has(video) {
+  border: 2px solid var(--accent, #9a97ac);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+
+me-card,
+project-card {
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* responsive design  */
+
+
+article {
+  border: 2px solid var(--accent, #9a97ac);   
+  border-radius: 12px;                        
+  padding: 1rem 1.5rem;
+  margin: 1.5rem auto;                        
+  max-width: 600px;                           
+  background-color: color-mix(in srgb, var(--main-bg, #f8f9fa) 85%, white);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);   
+}
+
+article img {
+  display: block;             
+  width: 100%;                
+  max-width: 400px;
+  aspect-ratio: 8 / 3;  
+  object-fit: cover;         
+  object-position: center;                      
+  margin: 0 auto 1rem auto;   
+  border-radius: 10px;        
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); 
+}
+
+
+@media (max-width: 900px) and (min-width: 601px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  article {
+    max-width: 500px;
+  }
+}
+
+iframe {
+  width: 100%;
+  max-width: 600px; /* education page , ucsd website embedded */
+  height: 200px;
+  border: none;
+}
+
+/* Firefox */
+html {
+  scrollbar-color: var(--scrollbar-color-thumb, darkred) var(--main-bg, #f8f9fa);
+  scrollbar-width: thin;
+}
+
+/* other web browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--main-bg, #f8f9fa);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-color-thumb, rgb(223, 87, 201));
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: color-mix(in srgb, var(--scrollbar-color-thumb, darkred) 70%, black);
+}
+
+@media (max-width: 600px) {
+  nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;    
+  align-items: center;        
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  gap: 0.6rem;
+  background: transparent;    
+  box-shadow: none;          
+}
+
+  nav a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    
+    padding: 0.5rem 0;
+    background-color: rgb(44, 49, 74);
+    color: white;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+    color: white;
+    background-color: rgb(34, 74, 127);
+    border: 1px solid #1f146b;
+    border-radius: 8px;
+  }
+}
+
